@@ -1,0 +1,15 @@
+- name: Java
+  percentage: 90
+  color: danger
+
+- name: Javascript
+  percentage: 70
+  color:
+
+- name: SQL
+  percentage: 70
+  color:
+
+- name: Intersystems Cache
+  percentage: 70
+  color:
