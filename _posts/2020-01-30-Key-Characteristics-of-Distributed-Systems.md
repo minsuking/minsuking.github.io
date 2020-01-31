@@ -11,10 +11,12 @@ description: Key Characteristics of a distributed system include Scalability, Re
 > Key Characteristics of a distributed system include Scalability, Reliability, Availability, Efficiency, and Manageability. Let's briefly review them.<br><br>
 
 ### 확장성   
-### Scalability
 확장성은 시스템, 프로세스 또는 네트워크의 수요 증가 및 관리 기능 증가하는 작업량을 지원하기 위해 지속적으로 진화할 수 있는 모든 분산 시스템은 확장 가능한 것으로 간주된다.<br>
+
+### Scalability
 > Scalability is the capability of a system, process, or a network to grow and manage increased demand. Any distributed system that can continuously evolve in order to suppor the growing amount of work is considered to be scalable.<br><br>
-> 시스템은 데이터 볼륨 증가 또는 작업량 증가와 같은 여러 가지 이유로 인해 확장되어야 할 수 있다. 확장 가능한 시스템은 성능 손실 없이 이러한 확장을 달성하기를 원한다.<br>
+
+시스템은 데이터 볼륨 증가 또는 작업량 증가와 같은 여러 가지 이유로 인해 확장되어야 할 수 있다. 확장 가능한 시스템은 성능 손실 없이 이러한 확장을 달성하기를 원한다.<br>
 > A system may have to scale because of many reason like increased data volume or increased amount of work. e.g., number of transctions. A scalable system would like to achieve this scaling without performance loss.<br><br>
 
 
