@@ -7,11 +7,11 @@ description: Key Characteristics of a distributed system include Scalability, Re
 ---
 # Key Characteristics of Distributed Systems   
 
-> 분산 시스템의 주요 특징으로는 확장 성, 신뢰성, 가용성, 효율성 및 관리성이 있습니다. 간단히 살펴 보겠습니다.
-> Key Characteristics of a distributed system include Scalability, Reliability, Availability, Efficiency, and Manageability. Let's briefly review them.
+> 분산 시스템의 주요 특징으로는 확장 성, 신뢰성, 가용성, 효율성 및 관리성이 있습니다. 간단히 살펴 보겠습니다.<br>
+> Key Characteristics of a distributed system include Scalability, Reliability, Availability, Efficiency, and Manageability. Let's briefly review them.<br><br>
 
-## 확장성   
-## Scalability
+### 확장성   
+### Scalability
 > 확장성은 시스템, 프로세스 또는 네트워크의 수요 증가 및 관리 기능 증가하는 작업량을 지원하기 위해 지속적으로 진화할 수 있는 모든 분산 시스템은 확장 가능한 것으로 간주된다.<br>
 > Scalability is the capability of a system, process, or a network to grow and manage increased demand. Any distributed system that can continuously evolve in order to suppor the growing amount of work is considered to be scalable.<br><br>
 > 시스템은 데이터 볼륨 증가 또는 작업량 증가와 같은 여러 가지 이유로 인해 확장되어야 할 수 있다. 확장 가능한 시스템은 성능 손실 없이 이러한 확장을 달성하기를 원한다.<br>
@@ -37,10 +37,10 @@ description: Key Characteristics of a distributed system include Scalability, Re
 
 ![architecture](https://1.bp.blogspot.com/-58qlT6bSnC0/VoTvX08YByI/AAAAAAAAGF8/aTJM7229jfA/s400/horizontal-vs-vertical-scaling-vertical-and-horizontal-scaling-explained-diagram.png)
 
-## 신뢰성<
+### 신뢰성
 > 정의에 따르면 신뢰성은 특정 기간 내에 시스템이 고장날 확률이다. 간단히 말해서, 분산 시스템은 소프트웨어 또는 하드웨어 구성 요소 중 하나 또는 여러 개에 장애가 발생하더라도 서비스를 계속 제공한다면 신뢰할 수 있는 것으로 간주된다. 신뢰성은 모든 분산 시스템의 주요 특징 중 하나를 나타낸다. 그러한 시스템에서는 고장 난 기계는 항상 다른 정상적인 기계로 교체되어 요청된 작업의 완료를 보장할 수 있기 때문이다.<br>
 
-## Reliability
+### Reliability
 > By definition, reliability is the probability a system will fail in a given period. In simple terms, a distributed system is considered reliable if it keeps delivering its services even when one or several of its software or hardware comonents fail. Reliability represents one of the main characteristics of any distributed system, since in such systems any failing machine can always be replaced by another healthy one, ensuring the completion of the requested task.<br><br>
 
 
@@ -53,7 +53,7 @@ description: Key Characteristics of a distributed system include Scalability, Re
 > Obviously, redundancy has a cost and reliable system has to pay that to achieve such resilience for services by eliminating every single point of failure.<br><br>
 
 
-## 유용성
+### 유용성
 > 정의에 따르면 가용성은 시스템이 특정 기간 동안 필요한 기능을 수행하기 위해 작동 상태를 유지하는 시간이다. 시스템, 서비스 또는 기계가 정상 조건에서 작동 상태를 유지하는 시간의 비율을 나타내는 간단한 측정이다. 한 달에 몇 시간씩 다운타임 없이 비행할 수 있는 항공기는 가용성이 높다고 할 수 있다. 가용성은 유지관리성, 수리 시간, 예비 가용성 및 기타 물류 고려 사항을 고려한다. 항공기가 정비를 위해 정지해 있는 경우, 그 기간 동안 항공기를 이용할 수 없는 것으로 간주한다.<br>
 > 신뢰성이란 발생할 수 있는 가능한 실제 상황의 전체 범위를 고려할 때 시간의 경과에 따른 가용성이다. 어떤 날씨라도 안전하게 통과시킬 수 있는 항공기는 가능한 조건에 대한 취약성이 있는 항공기보다 더 신뢰할 수 있다.<br>
 
