@@ -59,7 +59,7 @@ URL Shortening system은 다음 요구 사항을 충족 시켜야 한다.<br>
 
 <pre><code>
 createURL(apiDevKey, originalUrl, customAlias=None, userName = None, expireDate=None)
-</code><pre>
+</code></pre>
 **Parameters:**<br>
 apiDevKey(String) : 등록된 계정의 개발자 API키, 이것은 할당된 할당량에 기초하여 User를 Control 하는것에 사용될 것.<br>
 originalUrl : 원본 url<br>
@@ -72,6 +72,6 @@ expireDate=None : 단축된 url의 만료 날짜<br>
 
 <pre><code>
 deleteURL(apiDevKey, urlKey)
-</code><pre>
+</code></pre>
 여기서 urlKey는 검색할 단축 url을 나타내는 문자열이다. 삭제에 성공하면 url 제거에 대한 성공메시지가 반환된다.<br>
 **우리는 어떻게 abuse를 막고 예방할 수 있을까?** 악의적인 user는 현재설계되어 있는 모든 url키를 소비함으로써 이 서비스를 망하게 할 수 있다. 남용 방지를 위해 apiDevKey를 통해 사용자를 제한 할 수 있다. 각 apiDevKey는 일정기간당 특정 url생성 및 리디렉션 수로 제한 될 수 있다.<br>
