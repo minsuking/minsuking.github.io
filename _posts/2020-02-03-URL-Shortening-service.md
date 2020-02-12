@@ -67,7 +67,7 @@ customAlias=None : url에 대한 사용자의 지정키<br>
 userName = None : 인코딩에 사용될 선택적 사용자 이름<br>
 expireDate=None : 단축된 url의 만료 날짜<br>
 
-**Returns: String)**<br>
+**Returns: (String)**<br>
 성공적으로 Insert를 했다면 단축 URL을 리턴한다. 그렇지 않으면 error code를 반환한다. <br>
 
 ~~~Java
@@ -165,3 +165,42 @@ DB를 Scale out하기위해선, 수억개의 URL정보를 저장할 수 있도�
  **각 Cache 복제본을 없데이트하는 방법은 무엇인가?** Cache miss가 있을 때마다, 우리의 서버는 backend database에 접속할 것이다. 이런 상황이 나올때마다 Cache를 업데이트 하고 모든 cache 복제본에 새로운 항목을 전달할 수 있다. 각 복제본들은 새 항목을 추가하여 Cache를 업데이트 할 수 있다. 이미 해당 항목이 있으면 이 항목에 대해서 무시 할 수가 있다.
 
  ![cache](https://user-images.githubusercontent.com/60283244/74313216-96f13c00-4db6-11ea-89c9-06094279d61a.JPG)
+
+
+### Load Balancer (LB)
+
+시스템의 세 곳에 로드 밸런싱을 추가할 수 있다.<br><br>
+1. Clients와 Application servers 사이
+2. Application servers와 Database servers 사이
+3. Application servers와 Cache servers 사이
+
+처음에는 수신 요청을 backend servers 사이에 균등하게 배분하는 단순한 Round Robin 방식을 사용할 수 있었다. 이 LB는 구현이 간단하며 overhead를 도입하지 않는다. 이 접근법의 또 다른 장점은 서버가 정지되었을 경우, LB는 서버를 rotation에서 빼내고 그쪽으로 트래픽 전송을 중단한다는 것이다.<br><br>
+
+Round Robin LB의 문제는 서버 부하(server load)를 고려하지 않는다는 것이다. 서버에 과부하가 걸리거나 속도가 느린 경우 LB는 해당 서버에 대한 새 요청 전송을 중지하지 않는다. 이를 처리하기 위해 backend server의 부하에 대해 주기적으로 queries하고 이를 기반으로 트래픽을 조정하기 보다 지능적인 LB솔루션을 배치할 수 있다.<br>
+
+
+### 제거 또는 DB CleanUp
+
+항목들이 영구적으로 유지되어야 하는가? 아니면 삭제되어야 하는가? 사용자가 지정한 만료 시간에 도달하면 링크는 어떻게 처리 해야 하는가?<br><br>
+
+만약 우리가 그것들을 제거하기 위해 만료된 링크를 적극적으로 검색하기로 선택했다면, 그것은 우리의 데이터베이스에 많은 부하를 가할 것이다. 대신, 우리는 천천히 만료된 링크를 제거하고 게으른 DB정리를 할 수가 있다. 일부 만료된 링크는 더 오래 살 수 있지만 사용자에게 반환되지 않을지라도, 우리의 서비스는 만료된 링크만 삭제되도록 할 것이다.<br><br>
+
+> * 사용자가 만료된 링크에 액세스하려고 할 때마다 링크를 삭제하고, 사용자에게 오류를 반활할 수 있다.<br>
+> * 별도의 CleanUp 서비스를 주기적으로 실행하여 만료된 링크를 당사의 storage 및 cache에서 제거 할 수 있다. 이 서비스는 반드시 매우 경량이어야 하며 사용자 트래픽이 적을 경우에만 실행되도록 예약 할 수 있다.
+> * 각 링크에 대한 기본 만료 시간(예를들어 2년)을 가질 수 있다.
+> * 만료된 링크를 제거한 후 키를 다시 Key-DB에 넣어 재사용할 수 있다.
+> * 우리가 어느 정도 오랫동안 방문하지 않은 링크를 제거해야 할까? 예를들면 6개월? 이런 까다로운 결정을 해야한다. Storage가 점점 싸지기 때문에, 우리는 영원히 계속 유지하기로 결정 할 수 있다.
+
+![Cleanup Service](https://user-images.githubusercontent.com/60283244/74330814-b5b2fb00-4dd5-11ea-9eea-0eb0d73f311f.JPG)
+
+### 원격 측정
+
+짧은 URL을 몇 번 사용했는지, 사용자 위치는 무엇이었는지? 등 이 통계를 어떻게 저장하면 좋을까? 각 보기에서 업데이트 되는 DB 행의 일부인 경우 인기 있는 URL이 많은 concurrent requests충돌하면 어떻게 될까?<br><br>
+
+추적할 가치가 있는 통계 : 방문자의 국가, 접속 날짜 및 시간, 페이지가 액세스된 곳에서 클릭, 브라우저 또는 플랫폼을 참조하는 웹페이지<br><br>
+
+### 보안 및 사용권한
+
+사용자가 개인 URL을 만들거나 특정 사용자 집합이 URL에 액세스 하도록 허용할 수 있는가? <br><br>
+
+각 URL을 데이터베이스로 하여 권한 수준을(public/private) 저장할 수 있다. 또한 사용자를 저장하기 위한 별도의 테이블을 만들 수 있다. 특정 URL을 볼 수 있는 권한이 있는 UserIds. 사용자가 권한이 없어 URL에 액세스하려고 하면 오류(HTTP 401)를 다시 보낼 수도 있다. 우리가 우리의 데이터를 Cassandra와 같은 NoSQL wide-column 데이터베이스에 저장하고 있기 때문에, 사용 권한을 저장하는 테이블의 Key는 'Hash' (또는 KGS가 생성한 'Key')가 될 것이다. Columns에는 UserId들이 저장될것이고 그 ID들은 URL을 볼 수있는 권한이 있는 ID들이다.
