@@ -5,11 +5,11 @@ style:
 color: green
 description: This service will provide short aliases redirecting to long URLs.
 ---
-Tiny와 같은 URL 단축 서비스를 설계하기. 이 서비스는 긴 URL로 리다이렉션되는 짧은 aliaces를 제공한다.
+Tiny와 같은 URL 단축 서비스를 설계하기. 이 서비스는 긴 URL로 redirection되는 짧은 aliaces를 제공한다.
 
 ### URL Shortening이 필요한 이유.
 
-URL Shortening은 긴 URL에 대한 짧은 aliaces를 만드는데 사용된다. 우리는 이 단축된 aliases를 "short link"라고 부른다. 사용자는 이러한 Short link를 누르면 원래의 URL로 리다리렉션이 된다. Short link는 보여줄때, 출력할때 메시지를 보낼때 혹은 트위터를 할때 많은 공간을 절약해준다. 게다가 사용자들은 짧은 URL을 잘못 입력하는 경우가 있다.<br>
+URL Shortening은 긴 URL에 대한 짧은 aliaces를 만드는데 사용된다. 우리는 이 단축된 aliases를 "short link"라고 부른다. 사용자는 이러한 Short link를 누르면 원래의 URL로 redirection이 된다. Short link는 보여줄때, 출력할때 메시지를 보낼때 혹은 트위터를 할때 많은 공간을 절약해준다. 게다가 사용자들은 짧은 URL을 잘못 입력하는 경우가 있다.<br>
 
 예를들어, 우리는 아래의 페이지를 TinyURL을 통해 줄일경우 :<br>
 
@@ -33,22 +33,22 @@ URL Shortening system은 다음 요구 사항을 충족 시켜야 한다.<br>
 
 1. URL이 주어지면, 이 서비스는 그것을 짦고 Unique한 alias를 만들어야한다.  이것을 위에서 이야기했던 Short link라고 한다. 이 링크는 쉽게 복사하고 붙여넣을 수 있을 정도로 짧아야 한다.<br>
 
-2. User들이 Short link에 접근 할때, 이 서비스는 원래의 링크로 리다이렉트를 해줘야 한다.<br>
+2. User들이 Short link에 접근 할때, 이 서비스는 원래의 링크로 redirect를 해줘야 한다.<br>
 
 3. User는 선택적으로 자신의 url에 대한 사용자 정의 Short link를 선택 할 수 있어야한다.<br>
 
 4. 링크는 표준 기본 시간대가 지나면 만료된다. User는 만료 시간을 지정 할 수 있어야 한다.<br>
 
 **비 기능 요구 사항**<br>
-1. 시스템의 가용성이 높아야 한다. 이 시스템이 중단된다면 모든 url 서비스의 url 리다이렉션이 실패하기 때문이다.<br>
+1. 시스템의 가용성이 높아야 한다. 이 시스템이 중단된다면 모든 url 서비스의 url redirection이 실패하기 때문이다.<br>
 
-2. url 리디렉션은 최소의 지연시간으로 실시간으로 이뤄져야한다.<br>
+2. url redirection은 최소의 지연시간으로 실시간으로 이뤄져야한다.<br>
 
 3. Shortened link는 추측될 수 없어야 한다.<br>
 
 **확장 요구 사항**<br>
 
-1. 분석이 가능해야한다. 예를 들어 리디렉션 횟수<br>
+1. 분석이 가능해야한다. 예를 들어 redirection 횟수<br>
 
 2. 이 서비스는 REST API를 통해 접근 가능해야 한다.<br>
 
@@ -74,7 +74,7 @@ expireDate=None : 단축된 url의 만료 날짜<br>
 deleteURL(apiDevKey, urlKey)
 ~~~
 여기서 urlKey는 검색할 단축 url을 나타내는 문자열이다. 삭제에 성공하면 url 제거에 대한 성공메시지가 반환된다.<br><br>
-**우리는 어떻게 abuse를 막고 예방할 수 있을까?** 악의적인 user는 현재설계되어 있는 모든 url키를 소비함으로써 이 서비스를 망하게 할 수 있다. 남용 방지를 위해 apiDevKey를 통해 사용자를 제한 할 수 있다. 각 apiDevKey는 일정기간당 특정 url생성 및 리디렉션 수로 제한 될 수 있다.<br>
+**우리는 어떻게 abuse를 막고 예방할 수 있을까?** 악의적인 user는 현재설계되어 있는 모든 url키를 소비함으로써 이 서비스를 망하게 할 수 있다. 남용 방지를 위해 apiDevKey를 통해 사용자를 제한 할 수 있다. 각 apiDevKey는 일정기간당 특정 url생성 및 redirection 수로 제한 될 수 있다.<br>
 
 ### 데이터베이스 디자인
 > 인터뷰 초기단계에서 DB 스키마를 정의하는것은 다양한 요소들 간의 데이터 흐름을 이해하는 데 도움이 될 것이다.<br>
@@ -133,7 +133,7 @@ KGS도 여러 서버에 같은 키를 주지 않도록 해야 한다. 이를 위
 
 **각 앱 서버가 key-DB에서 일부키를 캐시할 수 있을까?** 가능하다. 캐시는 확실히 속도를 낼수있기 때문이다. 이럴 경우, 모든 키를 소비하기 전에 어플리케이션 서버가 종료된다면, 우리는 결국 그 키를 잃게 될 것이다. 68억개의 고유 6자키를 가지고 있기때문에 이것을 appcetable 할 수 있다.<br><bR>
 
-**키 조회를 어떻게 할 것인가?** 데이터베이스에서 키를 검색하여 전체 URL을 가져올 수 있다. DB에 있는 경우 Request의 "Location"필드에 저장된 URL을 전달해 "HTTP 302 Rediect" 상태를 브라우저로 다시 전송한다. 시스템에 해당키가 없다면 "HTTP 404 Not Found"상태를 발생시키거나 사용자를 다시 홈페이지로 리디렉션을 시킨다.<br><br>
+**키 조회를 어떻게 할 것인가?** 데이터베이스에서 키를 검색하여 전체 URL을 가져올 수 있다. DB에 있는 경우 Request의 "Location"필드에 저장된 URL을 전달해 "HTTP 302 Rediect" 상태를 브라우저로 다시 전송한다. 시스템에 해당키가 없다면 "HTTP 404 Not Found"상태를 발생시키거나 사용자를 다시 홈페이지로 redirection을 시킨다.<br><br>
 
 **우리는 costom aliase들에 대해 크기 제한을 가해야 하는가?** 우리 서비스는 custom aliases을 지원한다. 사용자는 원하는 '키'를 선택할 수 있지만, 사용자 지정 alias를 제공하는 것은 의무적인 상황은 아니다. 그러나 우리가 잉ㄹ관된 URL 데이터베이스를 갖도록 하기위해 사용자 지정 alias 에 대한 크기 제한을 두는 것이 합리적이고 바람직할 때가 많다. 사용자가(위의 데이터베이스 스키마가 반영된) 고객 키당 최대 16자를 지정할 수 있다고 가정해보자.)<br><br>
 ![KeySErver](https://user-images.githubusercontent.com/60283244/74297845-62b45600-4d8b-11ea-9b0d-40293642f83d.JPG)
