@@ -2,7 +2,7 @@
 title: URL Shortening service
 tags: [System Design]
 style:
-color: green
+color:
 description: This service will provide short aliases redirecting to long URLs.
 ---
 Tiny와 같은 URL 단축 서비스를 설계하기. 이 서비스는 긴 URL로 redirection되는 짧은 aliaces를 제공한다.
