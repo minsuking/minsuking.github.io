@@ -17,6 +17,6 @@ I am excited about the new interesting projects!
 </div>
 
 <div class="row">
-work experience
-{% include about/timeline.html %}
+
+{% include about/timeline.html title="Work Experience"%}
 </div>
