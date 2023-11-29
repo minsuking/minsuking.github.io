@@ -12,8 +12,8 @@ I like to solve problems and to write in Java. I like to learn new things and sh
 I am excited about the new interesting projects!
 
 <div class="row">
-{% include about/skills.html title="Proficient" source=site.data.programming-skills %}
-{% include about/skills.html title="Familiar" source=site.data.other-skills %}
+{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
+{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
 <div class="row">
