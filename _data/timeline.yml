@@ -1,33 +1,32 @@
-- title: Student, Incheon National University
+- title: Computer Science Engineering Student, Incheon National University
   from: 2008
   to: 2015
-  description: Major was Computer Science Engineering<br>
-               Studid Computer Science, data structure, etc<br>
-               I made a program to promote online shopping malls and essay writing institutes and did business.<br>
+  description: • Completed a comprehensive curriculum in Computer Science with a focus on core subjects such as data structures and algorithms. <br>
+• Gained practical experience by actively participating in the development and operation of an online shopping mall. <br>
+• Spearheaded the creation of a marketing program tailored for essay writing and English language institutes, overseeing its sales and maintenance. <br>
+• Applied theoretical knowledge to real-world scenarios, significantly contributing to business initiatives. <br>
 
 
-- title: Information Technology Specialist , Republic of Korea Air Force
+- title: Sergeant(R&D Team - Software Developer), Republic of Korea Air Force
   from: 2010.04
   to: 2012.04
-  description: I have developed messengers for soldiers and contributed to the unit.<br>
-               Winning the first prize in the software section of the security contest.<br>
-
-
-- title: Traveling and Volunteer , Spain, Czech Republic, Italy, Vietnam
-  from: 2015
-  to: 2016
-  description: I joined volunteer program in Spain Mardrid, Czech Republic Prague and Vietnam Hanoi<br>
-               I was traveling to Spain, Italy, Austria, Germany, France, UK, Netherland, Czech Republic, Slovakia, Hungary<br>
-
-
-- title: Software Engineer Internship, Naver Corp
+  description: • As a committed member of the Republic of Korea Air Force, I served within the Research and Development Team, utilizing my skills and expertise to elevate technological capabilities. <br>
+• Led various software development projects, showcasing proficiency in programming and adept problem-solving skills. <br> 
+• Played a pivotal role in advancing the team's technological objectives, contributing to the enhancement of software solutions within a military context. <br> 
+- title: Software Engineer Intern, Naver Corp
   from: 2017.06
   to: 2017.08
-  description: I developed a website under the theme "Sharing Convenience Information."<br>
-               learn Spring-boot, MySQL, Java, JQuery, Ajax, Jenkis, Git<br>
+  description: • Developed automation scripts for process optimization, resulting in 15% time reduction in manual tasks. <br>
+• Tested 90% of the application to optimize code performance and security, increasing reliability and scalability of the application. <br>
+• Implemented unit and integration tests (using Jest) to ensure Quality Assurance and production readiness for applications. <br>
 
 
 - title: Software Engineer, KyungHee University Medical Center
   from: 2017.09
   to: current
-  description: The medical institution develops and operates programs for accurate examination of patients.
+  description: • Developed custom software solutions to help healthcare providers maximize efficiency and troubleshoot any network and software issues. <br>
+• Designed and implemented a secure health data exchange protocol to improve data sharing between providers, resulting in a 20% reduction
+in administrative costs and a 2x increase in patient access to care. <br>
+• Utilized Docker, Java, and SQL Server to optimize software performance and scalability, which resulted in a 1 minute run time, a 20% increase
+in average software performance, and a 5% increase in the number of users. <br>
+

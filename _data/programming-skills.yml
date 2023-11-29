@@ -6,10 +6,22 @@
   percentage: 70
   color:
 
-- name: SQL
+- name: Oracle
   percentage: 70
   color:
 
-- name: Intersystems Cache
+- name: Spring boot
+  percentage: 70
+  color:
+
+- name: Maven
+  percentage: 70
+  color:
+
+- name: Git
+  percentage: 70
+  color:
+
+- name: Python
   percentage: 70
   color:
