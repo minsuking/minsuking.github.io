@@ -10,7 +10,3 @@ in maintenance overhead costs by approximately 35%.
 • Developed algorithm for test appointment booking, resulting in improved efficiency of test allocation up to 30%.
 external_url: 
 ---
-
-<p class="text-center">
-{% include elements/button.html link="https://github.com/YoussefRaafatNasry/portfolYOU" text="Learn More" %}
-</p>
