@@ -1,7 +1,19 @@
+- name: Problem Solving
+  percentage: 70
+  color: success
+
+- name: Machine learning
+  percentage: 50
+  color: info
+
+- name: Medical IT
+  percentage: 80
+  color: primary
+
 - name: English
   percentage: 50
-  color:
+  color: info
 
 - name: Japanese
   percentage: 30
-  color: 
+  color:  light

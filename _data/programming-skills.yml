@@ -2,26 +2,22 @@
   percentage: 90
   color: danger
 
-- name: Javascript
-  percentage: 70
-  color:
-
-- name: Oracle
-  percentage: 70
-  color:
-
-- name: Spring boot
-  percentage: 70
-  color:
-
-- name: Maven
-  percentage: 70
-  color:
-
-- name: Git
-  percentage: 70
-  color:
+- name: Spring Boot
+  percentage: 90
+  color: danger
 
 - name: Python
   percentage: 70
-  color:
+  color: success
+
+- name: JavaScript
+  percentage: 70
+  color: success
+
+- name: SVN, Git
+  percentage: 70
+  color: success
+
+- name: Oracle
+  percentage: 70
+  color: success

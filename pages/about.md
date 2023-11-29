@@ -18,5 +18,5 @@ I am excited about the new interesting projects!
 
 <div class="row">
 
-{% include about/timeline.html title="Work Experience" %}
+{% include about/timeline.html title="Work Experience" source=site.data.timeline%}
 </div>
