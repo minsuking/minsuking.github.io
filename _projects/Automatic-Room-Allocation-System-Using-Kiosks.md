@@ -2,7 +2,7 @@
 name: Automatic Room Allocation System Using Kiosks
 tools: [Java, JavaScript, Oracle, SVN]
 image:
-description: Worked on a project at Kyunghee University Medical Center from July 2020 to October 2023, enhancing coding and design to significantly reduce monthly test reception time. Implemented an automated room allocation system using kiosks, optimizing resource utilization and reducing maintenance costs by about 35%.
+description: Worked on a project at Kyunghee University Medical Center from July 2020 to October 2023 <br> enhancing coding and design to significantly reduce monthly test reception time. Implemented an automated room allocation system using kiosks <br> optimizing resource utilization and reducing maintenance costs by about 35%.
 ---
 # Automatic Room Allocation System Using Kiosks
 Kyunghee University Medical Center / July 2020 -October 2023 <br>
