@@ -18,7 +18,7 @@
   to: 2017.08
   description: • Developed automation scripts for process optimization, resulting in 15% time reduction in manual tasks. <br>
                • Tested 90% of the application to optimize code performance and security, increasing reliability and scalability of the application. <br>
-               • Implemented unit and integration tests (using Jest) to ensure Quality Assurance and production readiness for applications. <br>
+               • Implemented unit and integration tests (using JUnit) to ensure Quality Assurance and production readiness for applications. <br>
 
 
 - title: Software Engineer, KyungHee University Medical Center
