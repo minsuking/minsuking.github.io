@@ -1,13 +1,8 @@
 ### Site Settings ###
 title               : Minsu's Dev Notes
 description         : >-
-                      
-"Hello!
-
-I'm Minsu Kim, and I graduated in Computer Science. :computer: I find joy in writing code and solving problems, with a particular focus on Java, Python, Healthcare, Machine learning, System design and Web.
-
-Apart from my academic achievements, I have a deep love for coffee :coffee: and enjoy exploring new technologies and trends. Through this blog, I aim to document my journey, share ideas, and contribute to making the world a better place. :earth_asia:
-
+"Hello! I'm Minsu Kim, and I graduated in Computer Science. :computer: I find joy in writing code and solving problems, with a particular focus on Java, Python, Healthcare, Machine learning, System design and Web. <br>
+Apart from my academic achievements, I have a deep love for coffee :coffee: and enjoy exploring new technologies and trends. Through this blog, I aim to document my journey, share ideas, and contribute to making the world a better place. :earth_asia: <br>
 I'm passionate about learning and communicating, so I look forward to hearing your thoughts and feedback. Let's connect and explore together!"
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : minsuking.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
