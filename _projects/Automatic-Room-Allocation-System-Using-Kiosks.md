@@ -1,7 +1,7 @@
 ---
 name: Automatic Room Allocation System Using Kiosks
 tools: [Java, JavaScript, Oracle, SVN]
-image:
+image: https://github.com/minsuking/minsuking.github.io/assets/60283244/e8f9977e-d134-420e-b3f7-35c5eaf1b043
 description: 
 ---
 # Automatic Room Allocation System Using Kiosks
